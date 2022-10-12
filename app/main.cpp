@@ -1,8 +1,12 @@
-#include <iostream>
-#include <lib.hpp>
+#include "../include/humanTracker.hpp"
 
 int main()
 {
-    dummy();
+    HumanTracker ht;
+
+    ht.getImage();
+
+    //auto net = cv::dnn::readNet("yolov5s.onnx");
+    
     return 0;
 }
