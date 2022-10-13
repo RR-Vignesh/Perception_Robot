@@ -1,5 +1,5 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
+[![Build Status](https://app.travis-ci.com/guruadp/Human-tracker.svg?branch=main)](https://app.travis-ci.com/guruadp/Human-tracker)
 [![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
 ---
 
@@ -10,9 +10,22 @@ Simple starter C++ project with:
 - cmake
 - googletest
 
+## Authors
+```
+- Guru Nandhan A D P (Driver)
+- Vignesh RR (Navigator)
+- Dhanush Babu Allam (Design Keeper)
+```
+
+## Proposal Video
+```
+https://drive.google.com/file/d/1GAah9pIGzQ9FV1Fnsy-PT8RDRreMmQ4r/view?usp=drivesdk
+
+```
+
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/guruadp/Human-tracker
 cd <path to repository>
 mkdir build
 cd build
@@ -39,7 +52,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/guruadp/Human-tracker
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
