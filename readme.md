@@ -11,6 +11,7 @@ Simple starter C++ project with:
 - googletest
 
 ## Authors
+### Authors for phase zero
 ```
 - Guru Nandhan A D P (Driver)
 - Vignesh RR (Navigator)
@@ -20,6 +21,12 @@ Simple starter C++ project with:
 ## Proposal Video
 ```
 https://drive.google.com/file/d/1GAah9pIGzQ9FV1Fnsy-PT8RDRreMmQ4r/view?usp=drivesdk
+
+```
+
+## Sprint backlog sheet
+```
+https://docs.google.com/spreadsheets/d/19_OkdEZXWx5DfKONh7-brMJtN1depn29D8mu_A8oVLM/edit?usp=sharing
 
 ```
 
