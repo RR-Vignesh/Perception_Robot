@@ -1,6 +1,6 @@
 # C++ Boilerplate
 [![Build Status](https://app.travis-ci.com/guruadp/Human-tracker.svg?branch=main)](https://app.travis-ci.com/guruadp/Human-tracker)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/dallam0412/Perception_robot/badge.svg?branch=main)](https://coveralls.io/github/dallam0412/Perception_robot?branch=main)
 ---
 
 ## Overview
