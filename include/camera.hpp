@@ -2,11 +2,12 @@
 #define INCLUDE_CAMERA_HPP_
 
 #include <opencv2/opencv.hpp>
-
+using namespace cv;
 class Camera {
 public:
-  cv::Mat image;
-  void getImage();
+  Mat image;
+  Mat getImage();
+  void calibrateCamera();
 };
 
 #endif
