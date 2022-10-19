@@ -17,6 +17,11 @@ Simple starter C++ project with:
 - Vignesh RR (Navigator)
 - Dhanush Babu Allam (Design Keeper)
 ```
+### Authors for phase one
+```
+- Dhanush Babu Allam (Driver)
+- Guru Nandhan A D P (Navigator)
+- Vignesh RR (Design Keeper)
 
 ## Proposal Video
 ```
