@@ -1,5 +1,11 @@
+#include "../app/camera.cpp"
+#include "../app/detector.cpp"
 #include <gtest/gtest.h>
+#include <opencv2/opencv.hpp>
 
-TEST(dummy, should_pass) {
-  EXPECT_EQ(1, 1);
+using namespace cv;
+
+TEST(getImage, should_pass) {
+  Camera C;
+  EXPECT_EQ(C.getImage().channels(), 3);
 }
