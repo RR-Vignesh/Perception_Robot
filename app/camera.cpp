@@ -6,7 +6,7 @@ using namespace cv;
 using namespace std;
 
 Mat Camera::getImage() {
-    return image; 
+    return image;
 }
 void calibrateCamera(){
 
