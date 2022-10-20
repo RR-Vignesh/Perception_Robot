@@ -23,9 +23,14 @@ Simple starter C++ project with:
 - Guru Nandhan A D P (Navigator)
 - Vignesh RR (Design Keeper)
 
-## Proposal Video
+## Proposal Video for phase 0
 ```
 https://drive.google.com/file/d/1GAah9pIGzQ9FV1Fnsy-PT8RDRreMmQ4r/view?usp=drivesdk
+
+```
+## Proposal Video for phase 1
+```
+https://drive.google.com/file/d/1I9vAxkVhTJRYvi_rSrILar3qbIeT61RS/view?usp=sharing
 
 ```
 
@@ -37,7 +42,7 @@ https://docs.google.com/spreadsheets/d/19_OkdEZXWx5DfKONh7-brMJtN1depn29D8mu_A8o
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/guruadp/Human-tracker
+git clone --recursive https://github.com/dallam0412/Perception_robot.git
 cd <path to repository>
 mkdir build
 cd build
