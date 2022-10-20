@@ -8,7 +8,7 @@ void assign_id() {
     std::cout<<"Assign ID\n"; 
 }
 /**
- * @brief 
+ * @brief
  * 
  */
 void save_trajectory() {
