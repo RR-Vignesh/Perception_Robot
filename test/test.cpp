@@ -53,3 +53,9 @@ TEST(ImageWidthCheck, should_pass) {
   cv::Mat image = D.getImage();
   EXPECT_EQ(D.preProcessing(image).size().width, 640);
 }
+
+TEST(countHumans, should_pass) {
+    Mat img = cv::imread("..//data//test.png");
+    Detector Dec;
+    EXPECT_EQ(Dec.filterHuman(img), 1);
+}
