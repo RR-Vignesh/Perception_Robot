@@ -8,7 +8,7 @@
 using namespace cv;
 Mat Detector::preProcessing(Mat image) {
   Mat resize_down;
-  return resize_down;
+  return resize_down; 
 }
 Mat Detector::objectDetections(Mat img) {
   return img;
