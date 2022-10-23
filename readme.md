@@ -11,34 +11,40 @@ Simple starter C++ project with:
 - googletest
 
 ## Authors
-### Authors for phase zero
+### Authors for Phase 0
 ```
 - Guru Nandhan A D P (Driver)
 - Vignesh RR (Navigator)
 - Dhanush Babu Allam (Design Keeper)
 ```
-### Authors for phase one
+### Authors for Phase 1
 ```
 - Dhanush Babu Allam (Driver)
 - Guru Nandhan A D P (Navigator)
 - Vignesh RR (Design Keeper)
-
-## Proposal Video for phase 0
 ```
+### Authors for Phase 2
+```
+- Vignesh RR (Driver)
+- Dhanush Babu Allam (Navigator)
+- Guru Nandhan A D P (Design Keeper)
+```
+## Proposal Video for phase 0
+
 https://drive.google.com/file/d/1GAah9pIGzQ9FV1Fnsy-PT8RDRreMmQ4r/view?usp=drivesdk
 
-```
+
 ## Proposal Video for phase 1
-```
+
 https://drive.google.com/file/d/1I9vAxkVhTJRYvi_rSrILar3qbIeT61RS/view?usp=sharing
 
-```
+
 
 ## Sprint backlog sheet
-```
+
 https://docs.google.com/spreadsheets/d/19_OkdEZXWx5DfKONh7-brMJtN1depn29D8mu_A8oVLM/edit?usp=sharing
 
-```
+
 
 ## Standard install via command-line
 ```
