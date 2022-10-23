@@ -42,7 +42,39 @@
  *
  * @return cv::Mat
  */
-cv::Mat Camera::getImage() { return image; }
+cv::Mat Camera::getImage() {
+  std::cout << "Get Image\n";
+
+  cv::VideoCapture cap("../data/video.MOV");
+  //VideoCapture cap(0);
+
+  while (1) {
+
+    cv::Mat frame;
+    // Capture frame-by-frame
+    cap >> frame;
+
+    // If the frame is empty, break immediately
+    if (frame.empty())
+      break;
+
+    // Display the resulting frame
+    imshow("Frame", frame);
+
+    // Press  ESC on keyboard to exit
+    char c = (char)cv::waitKey(25);
+    if (c == 27)
+      break;
+  }
+
+  // When everything done, release the video capture object
+  cap.release();
+
+  // Closes all the frames
+  cv::destroyAllWindows();
+
+  return image;
+}
 /**
  * @this function calibrates the camera
  *

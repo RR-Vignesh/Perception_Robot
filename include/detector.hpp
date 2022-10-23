@@ -36,18 +36,18 @@
 
 #include "opencv2/opencv.hpp"
 
-#include "string"
+#include <string>
 
-#include "vector"
+#include <vector>
 
-#include "include/camera.hpp"
+#include "camera.hpp"
 
 
 class Detector : public Camera {
  private:
   cv::Mat resizedImage;
-  vector<int> boundingCoordinates;
-  string classToBeDetected;
+  std::vector<int> boundingCoordinates;
+  std::string classToBeDetected;
 
  public:
   /**
@@ -77,7 +77,7 @@ class Detector : public Camera {
    * @param img
    * @return vector<int>
    */
-  vector<int> boundingBox(cv::Mat img);
+  std::vector<int> boundingBox(cv::Mat img);
 };
 
 #endif  // INCLUDE_DETECTOR_HPP_

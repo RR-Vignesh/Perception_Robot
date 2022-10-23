@@ -69,7 +69,7 @@ int Detector::filterHuman(cv::Mat detectedImage) {
  * @param img
  * @return vector<int>
  */
-vector<int> Detector::boundingBox(cv::Mat img) {
-  vector<int> coordinates = {2, 2, 2, 2};
+std::vector<int> Detector::boundingBox(cv::Mat img) {
+  std::vector<int> coordinates = {2, 2, 2, 2};
   return coordinates;
 }
