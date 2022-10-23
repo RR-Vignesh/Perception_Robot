@@ -46,7 +46,6 @@ cv::Mat Camera::getImage() {
   std::cout << "Get Image\n";
 
   cv::VideoCapture cap("../data/video.MOV");
-  //VideoCapture cap(0);
 
   while (1) {
 
