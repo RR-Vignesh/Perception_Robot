@@ -58,14 +58,13 @@ cv::Mat Detector::preProcessing(cv::Mat image) {
   return blob;
 }
 
-vector<std::string> load_class_list(){
+vector<std::string> load_class_list() {
   vector<string> classes_list;
-    ifstream ifs("coco.names");
-    string line;
-    while (getline(ifs, line))
-    {
-        classes_list.push_back(line);
-    }
+  ifstream ifs("coco.names");
+  string line;
+  while (getline(ifs, line)) {
+    classes_list.push_back(line);
+  }
   return classes_list;
 }
 
@@ -75,7 +74,15 @@ vector<std::string> load_class_list(){
  * @param img
  * @return cv::Mat
  */
-cv::Mat Detector::objectDetections(cv::Mat img) { return img; }
+cv::Mat Detector::objectDetections(cv::Mat img) {
+  // Load image.
+  cv::Mat frame;
+  frame = cv::imread("traffic.jpg");
+  // Load model.
+  cv::dnn::Net net;
+  net = cv::dnn::readNet("YOLOv5s.onnx");
+  return img;
+}
 /**
  * @brief filters humans
  *
