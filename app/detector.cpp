@@ -58,10 +58,10 @@ cv::Mat Detector::preProcessing(cv::Mat image) {
   return blob;
 }
 
-vector<std::string> load_class_list() {
-  vector<string> classes_list;
-  ifstream ifs("coco.names");
-  string line;
+std::vector<std::string> load_class_list() {
+  std::vector<std::string> classes_list;
+  std::ifstream ifs("coco.names");
+  std::string line;
   while (getline(ifs, line)) {
     classes_list.push_back(line);
   }
