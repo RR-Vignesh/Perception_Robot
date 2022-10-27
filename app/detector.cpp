@@ -77,10 +77,19 @@ std::vector<std::string> load_class_list() {
 cv::Mat Detector::objectDetections(cv::Mat img) {
   // Load image.
   cv::Mat frame;
-  frame = cv::imread("traffic.jpg");
+  frame = cv::imread("img.jpg");
   // Load model.
   cv::dnn::Net net;
-  net = cv::dnn::readNet("YOLOv5s.onnx");
+  net = cv::dnn::readNet("../model/YOLOv5s.onnx");
+
+  cv::Mat blob = preProcessing(frame);
+  net.setInput(blob);
+
+  // Forward propagate.
+  std::vector<cv::Mat> detections;
+  net.forward(detections, net.getUnconnectedOutLayersNames());
+  
+  
   return img;
 }
 /**
