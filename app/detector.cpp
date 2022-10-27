@@ -38,6 +38,8 @@
 #include "opencv2/opencv.hpp"
 
 #include <fstream>
+
+#include <vector>
 /**
  * @brief this resizes the image
  *
@@ -54,6 +56,17 @@ cv::Mat Detector::preProcessing(cv::Mat image) {
                          true, false);
 
   return blob;
+}
+
+vector<std::string> load_class_list(){
+  vector<string> classes_list;
+    ifstream ifs("coco.names");
+    string line;
+    while (getline(ifs, line))
+    {
+        classes_list.push_back(line);
+    }
+  return classes_list;
 }
 
 /**
