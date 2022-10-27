@@ -36,6 +36,8 @@
 #include <iostream>
 
 #include "opencv2/opencv.hpp"
+
+#include <fstream>
 /**
  * @brief this resizes the image
  *
@@ -43,9 +45,17 @@
  * @return cv::Mat
  */
 cv::Mat Detector::preProcessing(cv::Mat image) {
-  cv::Mat resize_down;
-  return resize_down;
+  cv::Mat blob;
+
+  const float INPUT_WIDTH = 640.0;
+  const float INPUT_HEIGHT = 640.0;
+  cv::dnn::blobFromImage(image, blob, 1. / 255.,
+                         cv::Size(INPUT_WIDTH, INPUT_HEIGHT), cv::Scalar(),
+                         true, false);
+
+  return blob;
 }
+
 /**
  * @brief detects objects
  *
