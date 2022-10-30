@@ -25,7 +25,7 @@
  * @file detector.hpp
  * @author Dhanush Babu Allam, Guru Nandhan A D P, Vignesh RR
  * @This module preprocesses the image, detects objects and only filters humans
- * @version 0.1
+ * @version 0.2
  * @date 2022-10-19
  *
  * @copyright Copyright (c) 2022
@@ -35,49 +35,46 @@
 #define INCLUDE_DETECTOR_HPP_
 
 #include "opencv2/opencv.hpp"
-
-#include "string"
-
-#include "vector"
-
-#include "include/camera.hpp"
-
+#include <string>
+#include <vector>
+#include "camera.hpp"
 
 class Detector : public Camera {
- private:
+private:
   cv::Mat resizedImage;
-  vector<int> boundingCoordinates;
-  string classToBeDetected;
+  std::vector<int> boundingCoordinates;
+  std::string classToBeDetected;
 
- public:
+public:
   /**
    * @brief this resizes the image
    *
    * @param image
    * @return cv::Mat
    */
-  cv::Mat preProcessing(cv::Mat img);
+  std::vector<cv::Mat> preProcessing(cv::Mat &image, cv::dnn::Net &net);
   /**
    * @brief detects objects
    *
    * @param img
    * @return cv::Mat
    */
-  cv::Mat objectDetections(cv::Mat img);
+  cv::Mat objectDetections(cv::Mat &img);
+  // cv::Mat objectDetections();
   /**
    * @brief filters humans
    *
    * @param detectedImage
    * @return int
    */
-  int filterHuman(cv::Mat img);
+  int filterHuman(cv::Mat &image);
   /**
    * @brief draws bounding box
    *
    * @param img
    * @return vector<int>
    */
-  vector<int> boundingBox(cv::Mat img);
+  std::vector<int> boundingBox(cv::Mat &img);
 };
 
-#endif  // INCLUDE_DETECTOR_HPP_
+#endif // INCLUDE_DETECTOR_HPP_

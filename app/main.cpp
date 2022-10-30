@@ -31,14 +31,19 @@
  * @copyright Copyright (c) 2022
  *
  */
+#include <opencv2/highgui.hpp>
+
 #include "../include/humanTracker.hpp"
+
 int main() {
   HumanTracker ht;
 
-  cv::Mat image = ht.getImage();
-  cv::Mat processed_img = ht.preProcessing(image);
-  ht.objectDetections(processed_img);
-  // auto net = cv::dnn::readNet("yolov5s.onnx");
+  cv::VideoCapture cap(0);
+  cv::Mat frame;
 
+  while (1) {
+    cap.read(frame);
+    cv::Mat output = ht.objectDetections(frame);
+  }
   return 0;
 }

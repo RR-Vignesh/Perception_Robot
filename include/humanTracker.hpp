@@ -34,9 +34,9 @@
 #ifndef INCLUDE_HUMANTRACKER_HPP_
 #define INCLUDE_HUMANTRACKER_HPP_
 
-#include "include//camera.hpp"
-#include "include/detector.hpp"
-#include "include/tracker.hpp"
+#include "camera.hpp"
+#include "detector.hpp"
+#include "tracker.hpp"
 
 class HumanTracker : public Detector, public Trackers {
  private:
