@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Perception robot: detector.cpp File Reference</title>
+<title>perception robot: app/detector.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Perception robot
+   <div id="projectname">perception robot
    </div>
   </td>
  </tr>
@@ -67,31 +67,375 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">detector.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;../include/detector.hpp&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;opencv2/opencv.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for detector.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="detector_8cpp__incl.png" border="0" usemap="#adetector_8cpp" alt=""/></div>
-<map name="adetector_8cpp" id="adetector_8cpp">
-<area shape="rect" title=" " alt="" coords="170,5,263,31"/>
+<div class="center"><img src="detector_8cpp__incl.png" border="0" usemap="#aapp_2detector_8cpp" alt=""/></div>
+<map name="aapp_2detector_8cpp" id="aapp_2detector_8cpp">
+<area shape="rect" title=" " alt="" coords="248,5,367,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,156,104"/>
-<area shape="rect" title=" " alt="" coords="181,79,253,104"/>
-<area shape="rect" title=" " alt="" coords="277,79,417,104"/>
+<area shape="rect" title=" " alt="" coords="181,79,247,104"/>
+<area shape="rect" title=" " alt="" coords="271,79,343,104"/>
+<area shape="rect" title=" " alt="" coords="367,79,426,104"/>
+<area shape="rect" title=" " alt="" coords="451,79,591,104"/>
 </map>
 </div>
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a410c22cbc452ff9af5f2a36f460c3cbb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a410c22cbc452ff9af5f2a36f460c3cbb">load_class_list</a> ()</td></tr>
+<tr class="separator:a410c22cbc452ff9af5f2a36f460c3cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4805e3de102f5f056f72e683d8ad398"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#ac4805e3de102f5f056f72e683d8ad398">draw_label</a> (cv::Mat &amp;input_image, std::string label, int left, int top)</td></tr>
+<tr class="memdesc:ac4805e3de102f5f056f72e683d8ad398"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function assigns label  <a href="detector_8cpp.html#ac4805e3de102f5f056f72e683d8ad398">More...</a><br /></td></tr>
+<tr class="separator:ac4805e3de102f5f056f72e683d8ad398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1295551965d46461d0e6ac7590cda0a0"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a1295551965d46461d0e6ac7590cda0a0">post_process</a> (cv::Mat &amp;image, std::vector&lt; cv::Mat &gt; &amp;detections, const std::vector&lt; std::string &gt; &amp;class_list)</td></tr>
+<tr class="memdesc:a1295551965d46461d0e6ac7590cda0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function detects the image  <a href="detector_8cpp.html#a1295551965d46461d0e6ac7590cda0a0">More...</a><br /></td></tr>
+<tr class="separator:a1295551965d46461d0e6ac7590cda0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a81a872ded141468edfa1a503b82cb643"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a81a872ded141468edfa1a503b82cb643">INPUT_WIDTH</a> = 640.0</td></tr>
+<tr class="separator:a81a872ded141468edfa1a503b82cb643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6c8157cde3babdbf0f869d7c4fc7bb"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#abc6c8157cde3babdbf0f869d7c4fc7bb">INPUT_HEIGHT</a> = 640.0</td></tr>
+<tr class="separator:abc6c8157cde3babdbf0f869d7c4fc7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4e1a705cd334319a91ed9a92b31082"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#aab4e1a705cd334319a91ed9a92b31082">SCORE_THRESHOLD</a> = 0.5</td></tr>
+<tr class="separator:aab4e1a705cd334319a91ed9a92b31082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9491bc138343632856cc4d8bee617f31"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a9491bc138343632856cc4d8bee617f31">NMS_THRESHOLD</a> = 0.45</td></tr>
+<tr class="separator:a9491bc138343632856cc4d8bee617f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b908ab9fc958ed44b8fc0f9ca88cd49"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a5b908ab9fc958ed44b8fc0f9ca88cd49">CONFIDENCE_THRESHOLD</a> = 0.45</td></tr>
+<tr class="separator:a5b908ab9fc958ed44b8fc0f9ca88cd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec71279cc82398c08422933e84199ada"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#aec71279cc82398c08422933e84199ada">FONT_FACE</a> = cv::FONT_HERSHEY_COMPLEX</td></tr>
+<tr class="separator:aec71279cc82398c08422933e84199ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae564d1be23d6aede4bbcee8ccb07e047"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#ae564d1be23d6aede4bbcee8ccb07e047">FONT_SCALE</a> = 0.7</td></tr>
+<tr class="separator:ae564d1be23d6aede4bbcee8ccb07e047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff6bb029330e08b7eae41c5de2538c04"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#aff6bb029330e08b7eae41c5de2538c04">THICKNESS</a> = 1</td></tr>
+<tr class="separator:aff6bb029330e08b7eae41c5de2538c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6661c928108d1a392a689d4e6e4b268"><td class="memItemLeft" align="right" valign="top">cv::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#ae6661c928108d1a392a689d4e6e4b268">BLACK</a> = cv::Scalar(0, 0, 0)</td></tr>
+<tr class="separator:ae6661c928108d1a392a689d4e6e4b268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a822ab03785ba614c2e99397e480a035f"><td class="memItemLeft" align="right" valign="top">cv::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a822ab03785ba614c2e99397e480a035f">BLUE</a> = cv::Scalar(255, 178, 50)</td></tr>
+<tr class="separator:a822ab03785ba614c2e99397e480a035f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cfb3f6a46cda782df3fc198b10fee39"><td class="memItemLeft" align="right" valign="top">cv::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a3cfb3f6a46cda782df3fc198b10fee39">YELLOW</a> = cv::Scalar(0, 255, 255)</td></tr>
+<tr class="separator:a3cfb3f6a46cda782df3fc198b10fee39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae034c4d76e2b14fa3ff2cb2a86bbeff3"><td class="memItemLeft" align="right" valign="top">cv::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#ae034c4d76e2b14fa3ff2cb2a86bbeff3">RED</a> = cv::Scalar(0, 0, 255)</td></tr>
+<tr class="separator:ae034c4d76e2b14fa3ff2cb2a86bbeff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e30f4af4421d67e8d9326d851c88d7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detector_8cpp.html#a22e30f4af4421d67e8d9326d851c88d7">classes_list</a></td></tr>
+<tr class="separator:a22e30f4af4421d67e8d9326d851c88d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Dhanush Babu Allam, Guru Nandhan A D P, Vignesh RR @This module preprocesses the image, detects objects and only filters humans </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-10-19</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ac4805e3de102f5f056f72e683d8ad398" name="ac4805e3de102f5f056f72e683d8ad398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4805e3de102f5f056f72e683d8ad398">&#9670;&#160;</a></span>draw_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void draw_label </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this function assigns label </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input_image,label,left</td><td>top </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a410c22cbc452ff9af5f2a36f460c3cbb" name="a410c22cbc452ff9af5f2a36f460c3cbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410c22cbc452ff9af5f2a36f460c3cbb">&#9670;&#160;</a></span>load_class_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; load_class_list </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1295551965d46461d0e6ac7590cda0a0" name="a1295551965d46461d0e6ac7590cda0a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1295551965d46461d0e6ac7590cda0a0">&#9670;&#160;</a></span>post_process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat post_process </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; cv::Mat &gt; &amp;&#160;</td>
+          <td class="paramname"><em>detections</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>class_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this function detects the image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image,detections,class_list</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cv::Mat </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ae6661c928108d1a392a689d4e6e4b268" name="ae6661c928108d1a392a689d4e6e4b268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6661c928108d1a392a689d4e6e4b268">&#9670;&#160;</a></span>BLACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Scalar BLACK = cv::Scalar(0, 0, 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a822ab03785ba614c2e99397e480a035f" name="a822ab03785ba614c2e99397e480a035f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a822ab03785ba614c2e99397e480a035f">&#9670;&#160;</a></span>BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Scalar BLUE = cv::Scalar(255, 178, 50)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e30f4af4421d67e8d9326d851c88d7" name="a22e30f4af4421d67e8d9326d851c88d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e30f4af4421d67e8d9326d851c88d7">&#9670;&#160;</a></span>classes_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; classes_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b908ab9fc958ed44b8fc0f9ca88cd49" name="a5b908ab9fc958ed44b8fc0f9ca88cd49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b908ab9fc958ed44b8fc0f9ca88cd49">&#9670;&#160;</a></span>CONFIDENCE_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float CONFIDENCE_THRESHOLD = 0.45</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec71279cc82398c08422933e84199ada" name="aec71279cc82398c08422933e84199ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec71279cc82398c08422933e84199ada">&#9670;&#160;</a></span>FONT_FACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int FONT_FACE = cv::FONT_HERSHEY_COMPLEX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae564d1be23d6aede4bbcee8ccb07e047" name="ae564d1be23d6aede4bbcee8ccb07e047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae564d1be23d6aede4bbcee8ccb07e047">&#9670;&#160;</a></span>FONT_SCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float FONT_SCALE = 0.7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc6c8157cde3babdbf0f869d7c4fc7bb" name="abc6c8157cde3babdbf0f869d7c4fc7bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc6c8157cde3babdbf0f869d7c4fc7bb">&#9670;&#160;</a></span>INPUT_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float INPUT_HEIGHT = 640.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81a872ded141468edfa1a503b82cb643" name="a81a872ded141468edfa1a503b82cb643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81a872ded141468edfa1a503b82cb643">&#9670;&#160;</a></span>INPUT_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float INPUT_WIDTH = 640.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9491bc138343632856cc4d8bee617f31" name="a9491bc138343632856cc4d8bee617f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9491bc138343632856cc4d8bee617f31">&#9670;&#160;</a></span>NMS_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float NMS_THRESHOLD = 0.45</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae034c4d76e2b14fa3ff2cb2a86bbeff3" name="ae034c4d76e2b14fa3ff2cb2a86bbeff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae034c4d76e2b14fa3ff2cb2a86bbeff3">&#9670;&#160;</a></span>RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Scalar RED = cv::Scalar(0, 0, 255)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab4e1a705cd334319a91ed9a92b31082" name="aab4e1a705cd334319a91ed9a92b31082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4e1a705cd334319a91ed9a92b31082">&#9670;&#160;</a></span>SCORE_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float SCORE_THRESHOLD = 0.5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff6bb029330e08b7eae41c5de2538c04" name="aff6bb029330e08b7eae41c5de2538c04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff6bb029330e08b7eae41c5de2538c04">&#9670;&#160;</a></span>THICKNESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int THICKNESS = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cfb3f6a46cda782df3fc198b10fee39" name="a3cfb3f6a46cda782df3fc198b10fee39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cfb3f6a46cda782df3fc198b10fee39">&#9670;&#160;</a></span>YELLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Scalar YELLOW = cv::Scalar(0, 255, 255)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
