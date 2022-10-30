@@ -1,0 +1,28 @@
+app/detector.cpp:94:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &input_image  [runtime/references] [2]
+app/detector.cpp:117:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &image  [runtime/references] [2]
+app/detector.cpp:117:  Is this a non-const reference? If so, make const or use a pointer: std::vector<cv::Mat> &detections  [runtime/references] [2]
+Done processing app/detector.cpp
+Done processing app/humanTracker.cpp
+Done processing app/main.cpp
+Done processing app/tracker.cpp
+Done processing include/camera.hpp
+include/detector.hpp:38:  Found C system header after other header. Should be: detector.h, c system, c++ system, other.  [build/include_order] [4]
+include/detector.hpp:39:  Found C++ system header after other header. Should be: detector.h, c system, c++ system, other.  [build/include_order] [4]
+include/detector.hpp:40:  Include the directory when naming header files  [build/include_subdir] [4]
+include/detector.hpp:43:  private: should be indented +1 space inside class Detector  [whitespace/indent] [3]
+include/detector.hpp:48:  public: should be indented +1 space inside class Detector  [whitespace/indent] [3]
+include/detector.hpp:55:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &image  [runtime/references] [2]
+include/detector.hpp:55:  Is this a non-const reference? If so, make const or use a pointer: cv::dnn::Net &net  [runtime/references] [2]
+include/detector.hpp:62:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &img  [runtime/references] [2]
+include/detector.hpp:70:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &image  [runtime/references] [2]
+include/detector.hpp:77:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &img  [runtime/references] [2]
+include/detector.hpp:80:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+include/detector.hpp:46:  Add #include <string> for string  [build/include_what_you_use] [4]
+Done processing include/detector.hpp
+include/humanTracker.hpp:37:  Include the directory when naming header files  [build/include_subdir] [4]
+include/humanTracker.hpp:38:  Include the directory when naming header files  [build/include_subdir] [4]
+include/humanTracker.hpp:39:  Include the directory when naming header files  [build/include_subdir] [4]
+Done processing include/humanTracker.hpp
+Done processing include/tracker.hpp
+Total errors found: 18
+
