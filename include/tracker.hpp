@@ -37,7 +37,6 @@
 #include <vector>
 // #include "../app/tracker.cpp"
 
-
 class Trackers {
  public:
   std::vector<int> ids;

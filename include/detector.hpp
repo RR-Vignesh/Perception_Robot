@@ -25,7 +25,7 @@
  * @file detector.hpp
  * @author Dhanush Babu Allam, Guru Nandhan A D P, Vignesh RR
  * @This module preprocesses the image, detects objects and only filters humans
- * @version 0.1
+ * @version 0.2
  * @date 2022-10-19
  *
  * @copyright Copyright (c) 2022
@@ -35,11 +35,8 @@
 #define INCLUDE_DETECTOR_HPP_
 
 #include "opencv2/opencv.hpp"
-
 #include <string>
-
 #include <vector>
-
 #include "camera.hpp"
 
 class Detector : public Camera {
@@ -55,8 +52,7 @@ public:
    * @param image
    * @return cv::Mat
    */
-std::vector<cv::Mat> preProcessing(cv::Mat &image,
-                                             cv::dnn::Net &net);
+  std::vector<cv::Mat> preProcessing(cv::Mat &image, cv::dnn::Net &net);
   /**
    * @brief detects objects
    *

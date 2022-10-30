@@ -25,7 +25,7 @@
  * @file detector.cpp
  * @author Dhanush Babu Allam, Guru Nandhan A D P, Vignesh RR
  * @This module preprocesses the image, detects objects and only filters humans
- * @version 0.1
+ * @version 0.2
  * @date 2022-10-19
  *
  * @copyright Copyright (c) 2022
@@ -33,13 +33,11 @@
  */
 #include "../include/detector.hpp"
 
+#include <fstream>
 #include <iostream>
+#include <vector>
 
 #include "opencv2/opencv.hpp"
-
-#include <fstream>
-
-#include <vector>
 
 const float INPUT_WIDTH = 640.0;
 const float INPUT_HEIGHT = 640.0;
@@ -57,10 +55,10 @@ cv::Scalar YELLOW = cv::Scalar(0, 255, 255);
 cv::Scalar RED = cv::Scalar(0, 0, 255);
 
 /**
- * @brief this resizes the image
+ * @brief this function resizes the image
  *
  * @param image
- * @return cv::Mat
+ * @return std::vector<cv::Mat>
  */
 std::vector<cv::Mat> Detector::preProcessing(cv::Mat &image,
                                              cv::dnn::Net &net) {
@@ -80,7 +78,6 @@ std::vector<cv::Mat> Detector::preProcessing(cv::Mat &image,
 }
 std::vector<std::string> classes_list;
 std::vector<std::string> load_class_list() {
-
   std::ifstream ifs("../data/coco.names");
   std::string line;
   while (getline(ifs, line)) {
@@ -88,6 +85,12 @@ std::vector<std::string> load_class_list() {
   }
   return classes_list;
 }
+/**
+ * @brief this function assigns label
+ *
+ * @param input_image, label, left top
+ *
+ */
 void draw_label(cv::Mat &input_image, std::string label, int left, int top) {
   // Display the label at the top of the bounding box.
   int baseLine;
@@ -105,7 +108,12 @@ void draw_label(cv::Mat &input_image, std::string label, int left, int top) {
   cv::putText(input_image, label, cv::Point(left, top + label_size.height),
               FONT_FACE, FONT_SCALE, cv::Scalar(255, 255, 0), THICKNESS);
 }
-
+/**
+ * @brief this function detects the image
+ *
+ * @param image, detections, class_list
+ * @return cv::Mat
+ */
 cv::Mat post_process(cv::Mat &image, std::vector<cv::Mat> &detections,
                      const std::vector<std::string> &class_list) {
   // Initialize vectors to hold respective outputs while unwrapping detections.
@@ -115,7 +123,7 @@ cv::Mat post_process(cv::Mat &image, std::vector<cv::Mat> &detections,
   // Resizing factor.
   float x_factor = image.clone().cols / INPUT_WIDTH;
   float y_factor = image.clone().rows / INPUT_HEIGHT;
-  float *data = (float *)detections[0].data;
+  float *data = reinterpret_cast<float *>(detections[0].data);
   const int dimensions = 85;
   // 25200 for default size 640.
   const int rows = 25200;
@@ -133,7 +141,7 @@ cv::Mat post_process(cv::Mat &image, std::vector<cv::Mat> &detections,
       minMaxLoc(scores, 0, &max_class_score, 0, &class_id);
       if (max_class_score > SCORE_THRESHOLD) {
         confidences.push_back(confidence);
-        std::cout<<class_id.x<<std::endl;
+        std::cout << class_id.x << std::endl;
         class_ids.push_back(class_id.x);
         // Center.
         float cx = data[0];
@@ -142,10 +150,10 @@ cv::Mat post_process(cv::Mat &image, std::vector<cv::Mat> &detections,
         float w = data[2];
         float h = data[3];
         // Bounding box coordinates.
-        int left = int((cx - 0.5 * w) * x_factor);
-        int top = int((cy - 0.5 * h) * y_factor);
-        int width = int(w * x_factor);
-        int height = int(h * y_factor);
+        int left = static_cast<int>((cx - 0.5 * w) * x_factor);
+        int top = static_cast<int>((cy - 0.5 * h) * y_factor);
+        int width = static_cast<int>(w * x_factor);
+        int height = static_cast<int>(h * y_factor);
         // Store good detections in the boxes vector.
         boxes.push_back(cv::Rect(left, top, width, height));
       }
@@ -168,8 +176,7 @@ cv::Mat post_process(cv::Mat &image, std::vector<cv::Mat> &detections,
 
     // draw rectangle
     cv::rectangle(image, cv::Point(left, top),
-                  cv::Point(left + width, top + height), BLUE,
-                  3 * THICKNESS);
+                  cv::Point(left + width, top + height), BLUE, 3 * THICKNESS);
     std::string label = cv::format("%.2f", confidences[idx]);
     label = class_list[class_ids[idx]] + ":" + label;
     draw_label(image, label, left, top);
@@ -179,9 +186,9 @@ cv::Mat post_process(cv::Mat &image, std::vector<cv::Mat> &detections,
 }
 
 /**
- * @brief detects objects
+ * @brief calls both pre-processing and post-processing functions
  *
- * @param img
+ * @param imgage
  * @return cv::Mat
  */
 cv::Mat Detector::objectDetections(cv::Mat &image) {
@@ -209,11 +216,12 @@ cv::Mat Detector::objectDetections(cv::Mat &image) {
  *
  * @param detectedImage
  * @return int
- */
+ **/
 int Detector::filterHuman(cv::Mat &detectedImage) {
   int numberOfObjects = 0;
   return numberOfObjects;
 }
+
 /**
  * @brief draws bounding box
  *

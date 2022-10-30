@@ -31,13 +31,14 @@
  * @copyright Copyright (c) 2022
  *
  */
-#include "../include/humanTracker.hpp"
 #include <opencv2/highgui.hpp>
+
+#include "../include/humanTracker.hpp"
 
 int main() {
   HumanTracker ht;
 
-  cv::VideoCapture cap(0);//"../data/video.MOV");
+  cv::VideoCapture cap(0);
   cv::Mat frame;
 
   while (1) {

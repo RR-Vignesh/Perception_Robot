@@ -25,7 +25,7 @@
  * @file camera.cpp
  * @author Dhanush Babu Allam, Guru Nandhan A D P, Vignesh RR
  * @This module calibrates camera and gets input
- * @version 0.1
+ * @version 0.2
  * @date 2022-10-19
  *
  * @copyright Copyright (c) 2022
@@ -38,32 +38,29 @@
 #include "opencv2/opencv.hpp"
 
 /**
- * @this function gets image from camera
+ * @this function gets frame from camera
  *
  * @return cv::Mat
  */
 cv::Mat Camera::getImage() {
   std::cout << "Get Image\n";
-
-  cv::VideoCapture cap("../data/video.MOV");
+  // cv::Mat frame = cv::imread("../data/img.jpg");
+  cv::VideoCapture cap("../data/sample.mp4");
 
   while (1) {
-
     cv::Mat frame;
     // Capture frame-by-frame
     cap >> frame;
 
     // If the frame is empty, break immediately
-    if (frame.empty())
-      break;
+    if (frame.empty()) break;
 
     // Display the resulting frame
     imshow("Frame", frame);
 
     // Press  ESC on keyboard to exit
-    char c = (char)cv::waitKey(25);
-    if (c == 27)
-      break;
+    // char c = (char)cv::waitKey(25);
+    // if (c == 27) break;
   }
 
   // When everything done, release the video capture object
