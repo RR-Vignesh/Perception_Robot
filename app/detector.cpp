@@ -141,7 +141,6 @@ cv::Mat post_process(cv::Mat &image, std::vector<cv::Mat> &detections,
       minMaxLoc(scores, 0, &max_class_score, 0, &class_id);
       if (max_class_score > SCORE_THRESHOLD) {
         confidences.push_back(confidence);
-        std::cout << class_id.x << std::endl;
         class_ids.push_back(class_id.x);
         // Center.
         float cx = data[0];
