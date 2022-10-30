@@ -32,13 +32,17 @@
  *
  */
 #include "../include/humanTracker.hpp"
+#include <opencv2/highgui.hpp>
+
 int main() {
   HumanTracker ht;
 
-  cv::Mat image = ht.getImage();
-  cv::Mat processed_img = ht.preProcessing(image);
-  ht.objectDetections(processed_img);
-  // auto net = cv::dnn::readNet("yolov5s.onnx");
+  cv::VideoCapture cap(0);//"../data/video.MOV");
+  cv::Mat frame;
 
+  while (1) {
+    cap.read(frame);
+    cv::Mat output = ht.objectDetections(frame);
+  }
   return 0;
 }
