@@ -33,29 +33,89 @@
  */
 #include "../app/camera.cpp"
 #include "../app/detector.cpp"
+//#include "../app/humanTracker.cpp"
 #include <gtest/gtest.h>
 #include <opencv2/opencv.hpp>
 
 using namespace cv;
 
-TEST(getImage, should_pass) {
+/* TEST(getImage, should_pass) {
   Camera C;
   EXPECT_EQ(C.getImage().channels(), 3);
-}
-TEST(ImageHeightCheck, should_pass) {
-  Detector D;
-  cv::Mat image = D.getImage();
-  EXPECT_EQ(D.preProcessing(image).size().height, 640);
-}
+} */
 
-TEST(ImageWidthCheck, should_pass) {
-  Detector D;
-  cv::Mat image = D.getImage();
-  EXPECT_EQ(D.preProcessing(image).size().width, 640);
-}
+// TEST(ImageHeightCheck, should_pass) {
+//   Detector D;
+//   cv::Mat image = D.getImage();
+//   EXPECT_EQ(D.preProcessing(image).size().height, 640);
+// }
 
-TEST(countHumans, should_pass) {
+// TEST(ImageWidthCheck, should_pass) {
+//   Detector D;
+//   cv::Mat image = D.getImage();
+//   EXPECT_EQ(D.preProcessing(image).size().width, 640);
+// }
+
+/* TEST(countHumans, should_pass) {
     Mat img = cv::imread("..//data//test.png");
     Detector Dec;
     EXPECT_EQ(Dec.filterHuman(img), 1);
+} */
+
+TEST(DetectedObjectCheck, should_pass) {
+   Detector D;
+  cv::VideoCapture cap("../data/video.MOV");
+  cv::Mat frame;
+  cv::Mat output;
+  // int i=1;
+  bool a=true;
+  while (a) {
+    cap.read(frame);
+    output = D.objectDetections(frame);
+    a=false;
+    //i--;
+  }
+    EXPECT_EQ(output.channels(), 3);
 }
+
+TEST(PreprocessObjectCheck, should_pass) {
+   Detector D;
+  cv::VideoCapture cap("../data/video.MOV");
+  cv::Mat frame;
+  cv::Mat output;
+  cv::dnn::Net net;
+  net = cv::dnn::readNet("./../model/yolov5s.onnx");
+  std::vector<cv::Mat> detections;
+  // int i=1;
+  bool a=true;
+  while (a) {
+    cap.read(frame);
+    detections = D.preProcessing(frame,net);
+
+    a=false;
+    //i--;
+  }
+  std::cout<<"\n The width of the detected image is :"<<detections[0].size().width;
+    EXPECT_EQ(detections[0].size().width, 25200);
+}
+
+/* TEST(PostprocessObjectCheck, should_pass) {
+   Detector D;
+  cv::VideoCapture cap("../data/video.MOV");
+  cv::Mat frame;
+  cv::dnn::Net net;
+  net = cv::dnn::readNet("./../model/yolov5s.onnx");
+  std::vector<cv::Mat> detections;
+  // int i=1;
+  bool a=true;
+  while (a) {
+    cap.read(frame);
+    detections = D.preProcessing(frame,net);
+
+    a=false;
+    //i--;
+  }
+  std::cout<<"\n The width of the detected image is :"<<detections[0].size().width;
+    EXPECT_EQ(detections[0].size().width, 25200);
+}
+ */
