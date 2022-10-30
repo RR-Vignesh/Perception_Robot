@@ -42,42 +42,43 @@
 
 #include "camera.hpp"
 
-
 class Detector : public Camera {
- private:
+private:
   cv::Mat resizedImage;
   std::vector<int> boundingCoordinates;
   std::string classToBeDetected;
 
- public:
+public:
   /**
    * @brief this resizes the image
    *
    * @param image
    * @return cv::Mat
    */
-  cv::Mat preProcessing(cv::Mat img);
+std::vector<cv::Mat> preProcessing(cv::Mat &image,
+                                             cv::dnn::Net &net);
   /**
    * @brief detects objects
    *
    * @param img
    * @return cv::Mat
    */
-  cv::Mat objectDetections(cv::Mat img);
+  cv::Mat objectDetections(cv::Mat &img);
+  // cv::Mat objectDetections();
   /**
    * @brief filters humans
    *
    * @param detectedImage
    * @return int
    */
-  int filterHuman(cv::Mat img);
+  int filterHuman(cv::Mat &image);
   /**
    * @brief draws bounding box
    *
    * @param img
    * @return vector<int>
    */
-  std::vector<int> boundingBox(cv::Mat img);
+  std::vector<int> boundingBox(cv::Mat &img);
 };
 
-#endif  // INCLUDE_DETECTOR_HPP_
+#endif // INCLUDE_DETECTOR_HPP_
