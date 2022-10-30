@@ -39,6 +39,11 @@ https://drive.google.com/file/d/1GAah9pIGzQ9FV1Fnsy-PT8RDRreMmQ4r/view?usp=drive
 https://drive.google.com/file/d/1I9vAxkVhTJRYvi_rSrILar3qbIeT61RS/view?usp=sharing
 
 
+## Proposal Video for phase 2
+
+https://drive.google.com/file/d/1eROZa6WsIHWrOFnwzZL89hSM3-xToHFY/view?usp=sharing
+
+
 
 ## Sprint backlog sheet
 
