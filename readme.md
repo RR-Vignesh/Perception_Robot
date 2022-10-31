@@ -1,5 +1,5 @@
 # C++ Boilerplate
-[![Build Status](https://github.com/dallam0412/Perception_robot/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/dallam0412/Perception_robot/actions/workflows/build_and_coveralls.yml)
+[![Build Status](https://github.com/dallam0412/Perception_robot/workflows/CI/badge.svg)](https://github.com/dallam0412/Perception_robot/actions/workflows/build_and_coveralls.yml)
 [![Coverage Status](https://coveralls.io/repos/github/dallam0412/Perception_robot/badge.svg?branch=main)](https://coveralls.io/github/dallam0412/Perception_robot?branch=main)
 ---
 
